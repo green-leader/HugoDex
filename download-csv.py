@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import requests
 import os
+import sys
 
 base = 'https://raw.githubusercontent.com/PokeAPI/pokeapi/master/data/v2/csv/'
 files = [
@@ -167,7 +168,6 @@ files = [
     'super_contest_combos.csv',
     'super_contest_effect_prose.csv',
     'super_contest_effects.csv',
-    'translations',
     'type_efficacy.csv',
     'type_game_indices.csv',
     'type_names.csv',
@@ -189,3 +189,5 @@ for item in files:
     if r:
         f.write(r.text)
         f.close()
+    else:
+        print("%s did not download" % item, file=sys.stderr)
