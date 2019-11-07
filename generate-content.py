@@ -20,6 +20,7 @@ def genPokePages():
         with open(outPath, 'w') as out, open(indexPath, 'r') as f:
             data = json.load(f)
             data['title'] = data['name']
+            data['type'] = "pokemon"
             json.dump(data, out)
 
 
