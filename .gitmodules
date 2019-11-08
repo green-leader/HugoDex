@@ -5,5 +5,5 @@
 	path = json
 	url = https://github.com/PokeAPI/api-data
 [submodule "sprites"]
-	path = sprites
+	path = site/static/images
 	url = https://github.com/PokeAPI/sprites.git
