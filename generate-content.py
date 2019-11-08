@@ -19,8 +19,12 @@ def genPokePages():
         outPath = outputPath + item + '.md'
         with open(outPath, 'w') as out, open(indexPath, 'r') as f:
             data = json.load(f)
+            # metadata for hugo
             data['title'] = data['name']
             data['type'] = "pokemon"
+            data['img'] = 'sprites/pokemon/other-sprites/official-artwork/' + str(item) + '.png'
+            if not os.path.exists('site/static/images/' + data['img']):
+                data['img'] = 'sprites/pokemon/' + str(item) + '.png'
             json.dump(data, out)
 
 

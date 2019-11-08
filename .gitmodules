@@ -4,6 +4,6 @@
 [submodule "json"]
 	path = json
 	url = https://github.com/PokeAPI/api-data
-[submodule "sprites"]
-	path = sprites
+[submodule "site/static/images"]
+	path = site/static/images
 	url = https://github.com/PokeAPI/sprites.git
