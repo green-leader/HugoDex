@@ -1,4 +1,4 @@
-
+site/content/posts/
 # Created by https://www.gitignore.io/api/git,hugo,python
 # Edit at https://www.gitignore.io/?templates=git,hugo,python
 ### Vim ###
@@ -38,8 +38,8 @@ tags
 
 ### Hugo ###
 # Generated files by hugo
-/public/
-/resources/_gen/
+site/public/
+site/resources/_gen/
 
 # Executable may be added to repository
 hugo.exe
@@ -139,9 +139,6 @@ celerybeat-schedule
 .mr.developer.cfg
 .project
 .pydevproject
-
-# mkdocs documentation
-/site
 
 # mypy
 .mypy_cache/

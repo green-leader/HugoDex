@@ -1,0 +1,59 @@
+{{ define "main" }}
+<div class="row">
+<div class="col-md-8">
+    <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+          <header class="post-header">
+            <h1 class="post-title" itemprop="name headline">{{ .Title }} #{{ .Params.id }}</h1>
+          </header>
+
+          <div class="post-content" itemprop="articleBody">
+            <h3>Types:</h3>
+            <ul>
+            {{ range .Params.types }}
+              <li> {{ .type.name }} </li>
+            {{ end }}
+            </ul>
+
+
+			<h3>Profile:</h3>
+            {{ $height := div .Params.height 10.0 }}
+            <p>Height: {{ $height | lang.NumFmt 1 }} m</p>
+            {{ $weight := div .Params.weight 10.0 }}
+            <p>Weight: {{ $weight | lang.NumFmt 1 }} kg</p>
+            <p>Abilities<p>
+            <ul>
+            {{ range .Params.abilities }}
+              <li>{{ .ability.name }}</li>
+            {{ end }}
+            </ul>
+
+			<h3>Moves:</h3>
+            <ul>
+            {{ range .Params.moves }}
+            <li>{{ .move.name }}</li>
+            {{ end }}
+            </ul>
+          </div>
+
+    </article>
+    
+    <div class="row">
+            <ul class="pager">
+             {{ with .NextPage }}
+                    <li><a class="next" href="{{ .Permalink }}">&laquo; {{ .Title }}</a></li>
+              {{ end }}
+              {{ with .PrevPage }}
+                <li><a class="previous" href="{{ .Permalink }}">{{ .Title }} &raquo;</a></li>
+              {{ end }}
+            </ul>
+    </div>
+</div>
+
+
+{{ partial "sidebar.html" . }}
+
+</div>
+
+
+{{ end }}
